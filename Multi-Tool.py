@@ -143,7 +143,7 @@ def exitv2():
     os.system('cls')
     print("Closing... ")
     print("Thanks for using my product!")
-    quit()
+    app.destroy()
 
 
 app = tk.CTk()
