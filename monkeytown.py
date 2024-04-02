@@ -12,8 +12,9 @@ def main():
         for i in range(1, 50001):
             create_nested_folders('MonkeyTown', 500)
             print(f"{i} levels of folders created")
+        print("\nFinished creating 50000 levels of nested folders")
     except Exception as e:
-        print(f"Error: {e}")
+        print(f"\nError: {e}")
 
 if __name__ == "__main__":
     main()

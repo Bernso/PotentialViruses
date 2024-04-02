@@ -1,3 +1,9 @@
 myenv
 Icon
-Multi-Tool.py
+Required_Files
+BeansFolders
+__pycache__
+__pycache__/beanCreatornoUI.cpython-312.pyc
+__pycache__/gethwid.cpython-312.pyc
+__pycache__/getip.cpython-312.pyc
+__pycache__/monkeytown.cpython-312.pyc

