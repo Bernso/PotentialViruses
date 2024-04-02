@@ -1401,11 +1401,10 @@ def startup():
     #    time.sleep(2)
     #    quit()
     #    clear()
-
-
+#messagebox.showerror("Error", "Vishwa broke the stratosphere.")
+if __name__ == '__main__':
 #try:
-messagebox.showerror("Error", "Vishwa broke the stratosphere.")
-startup()
+    startup()
 #except Exception as e:
     #print(f"Error: {e}")
     #input()
