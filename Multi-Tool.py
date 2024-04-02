@@ -108,7 +108,7 @@ def download_py(url, save_path):
 ico_url = "https://raw.githubusercontent.com/Bernso/Icons/main/Arhururan.ico"
 save_path = os.path.join(Icon, "Arhururan.ico")  # Full file path including directory
 download_ico(ico_url, save_path)
-print("ICO file download process completed.\n\n")
+print("ICO file download process completed.\n")
 
 try:
     # Download python files
