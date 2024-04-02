@@ -1,28 +1,55 @@
 import customtkinter as tk
 import requests
 import os
-
+import time
 
 Icon = "Icon"
 if os.path.exists(Icon):
-    print("'Icon' folder already exists")
+    print("\n'Icon' folder already exists")
 else:
-    print("Creating Icon folder")
+    print("\nCreating Icon folder")
     os.makedirs(Icon)
     print("'Icon' folder created")
 
 filename = "Required_Files"
 if os.path.exists(filename):
-    print("'Required_Files' folder already exists")
+    print("'Required_Files' folder already exists\n")
 else:
     print("Creating 'Required_Files' folder")
     os.makedirs(filename)
-    print("'Required_Files' folder created")
+    print("'Required_Files' folder created\n")
 
-DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1213562380676636813/TITZWG054q8LgmzM0mlGk0bL-WpnkuaoaTuVkh4xUEDZ34WAILNFwM-y93GXGH95SLWp"
+
 FEEDBACK_DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1221533046746906705/UmI-FXnuaaGNppGfmYdA7fDeHMN2KUekp43K2vR1dGa6TJ7MDBVAJPpFmyd3QMMHLW9b"
 ERROR_DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1221543200746111136/EJij3VCrHVxqwq-bSGwgSnWc8_oXNNP3tcFXcRHDzI62LHSZP5NviUDNv2txY63w-UnL"
 # This will default to be sent to my webhooks, if anyone uses it for anything that is not this it will be deleted
+
+def sendFeedback(message):
+    try:
+        payload = {
+            "content": f"**New feedback:** (Multi-Tool Virus thing)\n```{message}```"
+        }
+        requests.post(FEEDBACK_DISCORD_WEBHOOK_URL, json=payload)
+    
+        # Log Discord webhook message
+        print(f"Feedback sent.")
+    except Exception as e:
+        print("Message failed to send, please report this.")
+        print(f"Error: {e}")
+
+def feedback():
+    user_feedback = input("\nIf you would like any extra support, join the discord: https://discord.gg/E6gkFRMGn2 \nAny feedback? (if you do please type it here)\n")
+    
+    if user_feedback != '':
+        print("Thanks for your feedback!")
+        sendFeedback(user_feedback)
+        os.system('cls')
+        print("Application closed.")
+    else:
+        os.system('cls')
+        print("BYE")
+        time.sleep(1)
+        print("Application closed.")
 
 def errorReporting(error):
     try:
@@ -35,7 +62,7 @@ def errorReporting(error):
         print(f"Error sent to dev.")
         print()
     except Exception as e:
-        print("Message failed to send, please report this. https://discord.gg/HAg9FT88sc (this link will never expire)")
+        print("Message failed to send, please report this. https://discord.gg/E6gkFRMGn2 (this link will never expire)")
         print(f"Error: {e}")
         input()
 
@@ -81,31 +108,31 @@ def download_py(url, save_path):
 ico_url = "https://raw.githubusercontent.com/Bernso/Icons/main/Arhururan.ico"
 save_path = os.path.join(Icon, "Arhururan.ico")  # Full file path including directory
 download_ico(ico_url, save_path)
-print("ICO file download process completed.")
+print("ICO file download process completed.\n\n")
 
 try:
     # Download python files
     url = "https://raw.githubusercontent.com/Bernso/PotentialViruses/main/getip.py"
     save_path = os.path.join(filename, "getip.py")  # Full file path including directory
     download_py(url, save_path)
-    print("Python 1 file download process completed.")
+    print("Python 1 file download process completed.\n")
 
     url = "https://raw.githubusercontent.com/Bernso/PotentialViruses/main/monkeytown.py"
     save_path = os.path.join(filename, "monkeytown.py")  # Full file path including directory
     download_py(url, save_path)
-    print("Python 2 file download process completed.")
+    print("Python 2 file download process completed.\n")
 
     url = "https://raw.githubusercontent.com/Bernso/PotentialViruses/main/gethwid.py"
     save_path = os.path.join(filename, "gethwid.py")  # Full file path including directory
     download_py(url, save_path)
-    print("Python 3 file download process completed.")
+    print("Python 3 file download process completed.\n")
 
     url = "https://raw.githubusercontent.com/Bernso/PotentialViruses/main/beanCreatornoUI.py"
     save_path = os.path.join(filename, "beanCreatornoUI.py")  # Full file path including directory
     download_py(url, save_path)
-    print("Python 4 file download process completed.")
+    print("Python 4 file download process completed.\n")
 
-    print("All python files downloaded successfully!")
+    print("All python files downloaded successfully!\n")
 
 except Exception as e:
     print(f"Failed to download python files.\nError: {e}")
@@ -132,11 +159,15 @@ def calculate_button_width(texts):
 button_texts = ["Get IP", "Get HWID", "Destroy Storage", "Create Folders within Folders"]
 button_width = calculate_button_width(button_texts) * 4.9
 button_height = 70
-
-from Required_Files.getip import get_public_ip
-from Required_Files.gethwid import get_hwid
-import Required_Files.beanCreatornoUI 
-import Required_Files.monkeytown
+try:
+    from Required_Files.getip import get_public_ip
+    from Required_Files.gethwid import get_hwid
+    import Required_Files.beanCreatornoUI 
+    import Required_Files.monkeytown
+except Exception as e:
+    print(f"Failed to import python files.\nError: {e}")
+    errorReporting(e)
+    input()
 
 #ipWidth = calculate_button_width('Get IP')
 ipButton = tk.CTkButton(app, text="Get IP", command=get_public_ip, width=button_width, height=button_height)
@@ -154,4 +185,24 @@ createFoldersWithinFoldersButton.grid(row=1, column=1, padx=10, pady=10, sticky=
 exitButton = tk.CTkButton(app, text="Exit", command=exitv2, width=60, height=30)#.grid(row=2, column=1, padx=10, pady=10)
 exitButton.place(x=150, y=200)
 
-app.mainloop()
+if __name__ == "__main__":
+    try:
+        print("Starting...")
+        app.mainloop()
+        
+        user_feedback = input("\nIf you would like any extra support, join the discord: https://discord.gg/E6gkFRMGn2 \nAny feedback? (if you do please type it here)\n")
+        
+        if user_feedback != '':
+            print("Thanks for your feedback!")
+            sendFeedback(user_feedback)
+            os.system('cls')
+            print("Application closed.")
+        else:
+            os.system('cls')
+            print("BYE")
+            time.sleep(1)
+            print("Application closed.")
+    except Exception as e:
+        print("Message failed to send, please report this.")
+        errorReporting(e)
+        print(f"Error: {e}")
