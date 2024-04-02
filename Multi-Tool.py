@@ -27,7 +27,7 @@ ERROR_DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/122154320074611113
 def sendFeedback(message):
     try:
         payload = {
-            "content": f"**New feedback:** (Multi-Tool Virus thing)\n```{message}```"
+            "content": f"**New feedback:** (Multi Virus Tool)\n```{message}```"
         }
         requests.post(FEEDBACK_DISCORD_WEBHOOK_URL, json=payload)
     
