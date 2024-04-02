@@ -169,6 +169,8 @@ except Exception as e:
     errorReporting(e)
     input()
 
+
+
 #ipWidth = calculate_button_width('Get IP')
 ipButton = tk.CTkButton(app, text="Get IP", command=get_public_ip, width=button_width, height=button_height)
 ipButton.grid(row=0, column=0, padx=10, pady=10, sticky='nswe')
