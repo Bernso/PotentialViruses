@@ -32,7 +32,7 @@ def get_public_ip():
         print(f"An error occurred: {e}")
         
 def user_choice():
-    choice = input("\nWhat would you like? (priv/pub/all)\n")
+    choice = input("\nWhat would you like? (priv/pub/all/exit)\n")
     if choice.lower() == "priv":
         get_private_ip()
     elif choice.lower() == "pub":
@@ -41,6 +41,9 @@ def user_choice():
         get_private_ip()
         get_public_ip()
         print("Your IP's have been printed above ^\n")
+    elif choice.lower() == "exit":
+        print("\nSo no ip? 😞")
+        pass
     else:
         print("\nPlease enter a valid option.")
         print("Bro fr doesn't know how to spell lmao")

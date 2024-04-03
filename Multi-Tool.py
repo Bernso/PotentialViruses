@@ -2,7 +2,7 @@ import customtkinter as tk
 import requests
 import os
 import time
-
+os.system("cls")
 Icon = "Icon"
 if os.path.exists(Icon):
     print("\n'Icon' folder already exists")
