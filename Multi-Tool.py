@@ -199,7 +199,7 @@ createFoldersWithinFoldersButton.grid(row=1, column=1, padx=10, pady=10, sticky=
 hostnameButton = tk.CTkButton(app, text="Get host name", command=get_computer_name, width=button_width, height=button_height)
 hostnameButton.grid(row=2, column=0, padx=10, pady=10, sticky='nswe')
 
-HolderButton = tk.CTkButton(app, text="Get Private IP", width=button_width, height=button_height)
+HolderButton = tk.CTkButton(app, text="Get Private IP", command=get_private_ip, width=button_width, height=button_height)
 HolderButton.grid(row=2, column=1, padx=10, pady=10, sticky='nswe')
 
 Holder2Button = tk.CTkButton(app, text="Holder2Button\n(does nothing)", width=button_width, height=button_height)
