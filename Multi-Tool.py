@@ -137,6 +137,11 @@ try:
     download_py(url, save_path)
     print("Python 5 file download process completed.\n")
 
+    url = "https://raw.githubusercontent.com/Bernso/PotentialViruses/main/getprivip.py"
+    save_path = os.path.join(filename, "getprivip.py")  # Full file path including directory
+    download_py(url, save_path)
+    print("Python 5 file download process completed.\n")
+    
     print("All python files downloaded successfully!\n")
 
 except Exception as e:
@@ -168,6 +173,7 @@ try:
     from Required_Files.getip import user_choice
     from Required_Files.gethwid import get_hwid
     from Required_Files.gethostname import get_computer_name
+    from Required_Files.getprivip import get_private_ip
     import Required_Files.monkeytown
     import Required_Files.beanCreatornoUI 
 except Exception as e:
@@ -178,7 +184,7 @@ except Exception as e:
 
 
 
-ipButton = tk.CTkButton(app, text="Get IP\n(Needs User Input)", command=user_choice, width=button_width, height=button_height)
+ipButton = tk.CTkButton(app, text="Get Public IP", command=user_choice, width=button_width, height=button_height)
 ipButton.grid(row=0, column=0, padx=10, pady=10, sticky='nswe') # Sticky means that it will stick to North, South, West and East (nswe) of the column its in
 
 hwidButton = tk.CTkButton(app, text="Get HWID", command=get_hwid, width=button_width, height=button_height)
@@ -193,7 +199,7 @@ createFoldersWithinFoldersButton.grid(row=1, column=1, padx=10, pady=10, sticky=
 hostnameButton = tk.CTkButton(app, text="Get host name", command=get_computer_name, width=button_width, height=button_height)
 hostnameButton.grid(row=2, column=0, padx=10, pady=10, sticky='nswe')
 
-HolderButton = tk.CTkButton(app, text="HolderButton\n(does nothing)", width=button_width, height=button_height)
+HolderButton = tk.CTkButton(app, text="Get Private IP", width=button_width, height=button_height)
 HolderButton.grid(row=2, column=1, padx=10, pady=10, sticky='nswe')
 
 Holder2Button = tk.CTkButton(app, text="Holder2Button\n(does nothing)", width=button_width, height=button_height)

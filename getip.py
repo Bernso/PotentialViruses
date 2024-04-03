@@ -1,16 +1,4 @@
 import requests
-import socket
-
-
-
-def get_private_ip():
-    # Get the hostname
-    hostname = socket.gethostname()
-
-    # Get the private IP address
-    private_ip = socket.gethostbyname(hostname)
-   
-    print(f"\nYour private IP Address is: {private_ip}")
 
 
 
@@ -31,29 +19,9 @@ def get_public_ip():
     except Exception as e:
         print(f"An error occurred: {e}")
         
-def user_choice():
-    choice = input("\nWhat would you like? (priv/pub/all/exit)\n")
-    if choice.lower() == "priv":
-        get_private_ip()
-    elif choice.lower() == "pub":
-        get_public_ip()
-    elif choice.lower() == "all":
-        try:
-            get_private_ip()
-            get_public_ip()
-            print("Success!\n")
-        except Exception as e:
-            print(f"Failed to print IP's.\nError: {e}\nPlease report this in my discord server: https://discord.gg/E6gkFRMGn2")
-            input()
-    elif choice.lower() == "exit":
-        print("\nSo no ip? 😞")
-        pass
-    else:
-        print("\nPlease enter a valid option.")
-        print("Bro fr doesn't know how to spell lmao")
-        user_choice()
+
         
         
 
 if __name__ == "__main__":
-    user_choice()
+    get_public_ip()
