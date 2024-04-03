@@ -12,12 +12,12 @@ def get_public_ip():
         if response.status_code == 200:
             # Parse the JSON response and extract the IP address
             ip_address = response.json()['ip']
-            print(f"Your public IP address is: {ip_address}")
+            print(f"\nYour public IP address is: {ip_address}")
         else:
-            print(f"Failed to retrieve IP address. Status code: {response.status_code}")
+            print(f"\nFailed to retrieve IP address. Status code: {response.status_code}")
             
     except Exception as e:
-        print(f"An error occurred: {e}")
+        print(f"\nAn error occurred: {e}")
         
 
         

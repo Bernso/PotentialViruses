@@ -170,7 +170,7 @@ button_texts = ["Get IP", "Get HWID", "Destroy Storage", "Create Folders within 
 button_width = calculate_button_width(button_texts) * 4.9
 button_height = 70
 try:
-    from Required_Files.getip import user_choice
+    from Required_Files.getip import get_public_ip
     from Required_Files.gethwid import get_hwid
     from Required_Files.gethostname import get_computer_name
     from Required_Files.getprivip import get_private_ip
@@ -184,7 +184,7 @@ except Exception as e:
 
 
 
-ipButton = tk.CTkButton(app, text="Get Public IP", command=user_choice, width=button_width, height=button_height)
+ipButton = tk.CTkButton(app, text="Get Public IP", command=get_public_ip, width=button_width, height=button_height)
 ipButton.grid(row=0, column=0, padx=10, pady=10, sticky='nswe') # Sticky means that it will stick to North, South, West and East (nswe) of the column its in
 
 hwidButton = tk.CTkButton(app, text="Get HWID", command=get_hwid, width=button_width, height=button_height)
