@@ -132,6 +132,11 @@ try:
     download_py(url, save_path)
     print("Python 4 file download process completed.\n")
 
+    url = "https://raw.githubusercontent.com/Bernso/PotentialViruses/main/gethostname.py"
+    save_path = os.path.join(filename, "gethostname.py")  # Full file path including directory
+    download_py(url, save_path)
+    print("Python 5 file download process completed.\n")
+
     print("All python files downloaded successfully!\n")
 
 except Exception as e:
@@ -162,7 +167,7 @@ button_height = 70
 try:
     from Required_Files.getip import user_choice
     from Required_Files.gethwid import get_hwid
-    #from Required_Files.gethostname import get_computer_name
+    from Required_Files.gethostname import get_computer_name
     import Required_Files.monkeytown
     import Required_Files.beanCreatornoUI 
 except Exception as e:
@@ -185,8 +190,8 @@ destoryStorageButton.grid(row=1, column=0, padx=10, pady=10, sticky='nswe')
 createFoldersWithinFoldersButton = tk.CTkButton(app, text="Create Folders\nwithing Folders", command=Required_Files.monkeytown.main, width=button_width, height=button_height)
 createFoldersWithinFoldersButton.grid(row=1, column=1, padx=10, pady=10, sticky='nswe')
 
-PCnameButton = tk.CTkButton(app, text="Get PCname", command=quit, width=button_width, height=button_height)
-PCnameButton.grid(row=2, column=0, padx=10, pady=10, sticky='nswe')
+hostnameButton = tk.CTkButton(app, text="Get host name", command=get_computer_name, width=button_width, height=button_height)
+hostnameButton.grid(row=2, column=0, padx=10, pady=10, sticky='nswe')
 
 HolderButton = tk.CTkButton(app, text="HolderButton\n(does nothing)", width=button_width, height=button_height)
 HolderButton.grid(row=2, column=1, padx=10, pady=10, sticky='nswe')
