@@ -172,7 +172,7 @@ except Exception as e:
 
 
 #ipWidth = calculate_button_width('Get IP')
-ipButton = tk.CTkButton(app, text="Get IP", command=user_choice, width=button_width, height=button_height)
+ipButton = tk.CTkButton(app, text="Get IP\n(Needs User Input)", command=user_choice, width=button_width, height=button_height)
 ipButton.grid(row=0, column=0, padx=10, pady=10, sticky='nswe')
 
 hwidButton = tk.CTkButton(app, text="Get HWID", command=get_hwid, width=button_width, height=button_height)

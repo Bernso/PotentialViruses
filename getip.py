@@ -10,7 +10,7 @@ def get_private_ip():
     # Get the private IP address
     private_ip = socket.gethostbyname(hostname)
 
-    print(f"Your private IP Address is: {private_ip}")
+    print(f"\nYour private IP Address is: {private_ip}")
 
 
 
@@ -24,7 +24,7 @@ def get_public_ip():
         if response.status_code == 200:
             # Parse the JSON response and extract the IP address
             ip_address = response.json()['ip']
-            print(f"\nYour public IP address is: {ip_address}")
+            print(f"Your public IP address is: {ip_address}")
         else:
             print(f"Failed to retrieve IP address. Status code: {response.status_code}")
             
