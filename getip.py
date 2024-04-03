@@ -38,9 +38,13 @@ def user_choice():
     elif choice.lower() == "pub":
         get_public_ip()
     elif choice.lower() == "all":
-        get_private_ip()
-        get_public_ip()
-        print("Your IP's have been printed above ^\n")
+        try:
+            get_private_ip()
+            get_public_ip()
+            print("Success!\n")
+        except Exception as e:
+            print(f"Failed to print IP's.\nError: {e}\nPlease report this in my discord server: https://discord.gg/E6gkFRMGn2")
+            input()
     elif choice.lower() == "exit":
         print("\nSo no ip? 😞")
         pass
