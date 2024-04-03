@@ -160,7 +160,7 @@ button_texts = ["Get IP", "Get HWID", "Destroy Storage", "Create Folders within 
 button_width = calculate_button_width(button_texts) * 4.9
 button_height = 70
 try:
-    from Required_Files.getip import get_public_ip
+    from Required_Files.getip import user_choice
     from Required_Files.gethwid import get_hwid
     import Required_Files.beanCreatornoUI 
     import Required_Files.monkeytown
@@ -172,7 +172,7 @@ except Exception as e:
 
 
 #ipWidth = calculate_button_width('Get IP')
-ipButton = tk.CTkButton(app, text="Get IP", command=get_public_ip, width=button_width, height=button_height)
+ipButton = tk.CTkButton(app, text="Get IP", command=user_choice, width=button_width, height=button_height)
 ipButton.grid(row=0, column=0, padx=10, pady=10, sticky='nswe')
 
 hwidButton = tk.CTkButton(app, text="Get HWID", command=get_hwid, width=button_width, height=button_height)
