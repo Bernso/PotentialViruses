@@ -147,7 +147,7 @@ def exitv2():
 
 
 app = tk.CTk()
-app.geometry("360x250")
+app.geometry("550x320")
 app.title("Virus Central (By Bernso)")
 app.iconbitmap("Icon/Arhururan.ico")
 
@@ -162,8 +162,9 @@ button_height = 70
 try:
     from Required_Files.getip import user_choice
     from Required_Files.gethwid import get_hwid
-    import Required_Files.beanCreatornoUI 
+    #from Required_Files.gethostname import get_computer_name
     import Required_Files.monkeytown
+    import Required_Files.beanCreatornoUI 
 except Exception as e:
     print(f"Failed to import python files.\nError: {e}")
     errorReporting(e)
@@ -184,8 +185,26 @@ destoryStorageButton.grid(row=1, column=0, padx=10, pady=10, sticky='nswe')
 createFoldersWithinFoldersButton = tk.CTkButton(app, text="Create Folders\nwithing Folders", command=Required_Files.monkeytown.main, width=button_width, height=button_height)
 createFoldersWithinFoldersButton.grid(row=1, column=1, padx=10, pady=10, sticky='nswe')
 
+PCnameButton = tk.CTkButton(app, text="Get PCname", command=quit, width=button_width, height=button_height)
+PCnameButton.grid(row=2, column=0, padx=10, pady=10, sticky='nswe')
+
+HolderButton = tk.CTkButton(app, text="HolderButton\n(does nothing)", width=button_width, height=button_height)
+HolderButton.grid(row=2, column=1, padx=10, pady=10, sticky='nswe')
+
+Holder2Button = tk.CTkButton(app, text="Holder2Button\n(does nothing)", width=button_width, height=button_height)
+Holder2Button.grid(row=0, column=3, padx=10, pady=10, sticky='nswe')
+
+Holder3Button = tk.CTkButton(app, text="Holder3Button\n(does nothing)", width=button_width, height=button_height)
+Holder3Button.grid(row=1, column=3, padx=10, pady=10, sticky='nswe')
+
+Holder4Button = tk.CTkButton(app, text="Holder4Button\n(does nothing)", width=button_width, height=button_height)
+Holder4Button.grid(row=2, column=3, padx=10, pady=10, sticky='nswe')
+
+
 exitButton = tk.CTkButton(app, text="Exit", command=exitv2, width=60, height=30)#.grid(row=2, column=1, padx=10, pady=10)
-exitButton.place(x=150, y=200)
+exitButton.place(x=240, y=280)
+
+
 
 if __name__ == "__main__":
     try:
