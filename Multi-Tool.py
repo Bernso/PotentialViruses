@@ -1,8 +1,15 @@
-import customtkinter as tk
-import requests
-import os
-import time
-os.system("cls")
+try:
+    import customtkinter as tk
+    import requests
+    import os
+    import time
+except ImportError as e:
+    print(f"Error importing\nError: {e}")
+    print("If you are consistently having trouble join the discord and ask for help: https://discord.gg/E6gkFRMGn2")
+    input()
+    
+os.system("cls") # Just for the looks
+
 Icon = "Icon"
 if os.path.exists(Icon):
     print("\n'Icon' folder already exists")
@@ -199,6 +206,8 @@ createFoldersWithinFoldersButton.grid(row=1, column=1, padx=10, pady=10, sticky=
 hostnameButton = tk.CTkButton(app, text="Get host name", command=get_computer_name, width=button_width, height=button_height)
 hostnameButton.grid(row=2, column=0, padx=10, pady=10, sticky='nswe')
 
+
+############################### HOLDER BUTTONS #############################
 HolderButton = tk.CTkButton(app, text="Get Private IP", command=get_private_ip, width=button_width, height=button_height)
 HolderButton.grid(row=2, column=1, padx=10, pady=10, sticky='nswe')
 
@@ -210,7 +219,7 @@ Holder3Button.grid(row=1, column=3, padx=10, pady=10, sticky='nswe')
 
 Holder4Button = tk.CTkButton(app, text="Holder4Button\n(does nothing)", width=button_width, height=button_height)
 Holder4Button.grid(row=2, column=3, padx=10, pady=10, sticky='nswe')
-
+############################### HOLDER BUTTONS #############################
 
 exitButton = tk.CTkButton(app, text="Exit", command=exitv2, width=60, height=30)#.grid(row=2, column=1, padx=10, pady=10)
 exitButton.place(x=240, y=280)
