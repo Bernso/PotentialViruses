@@ -9,10 +9,12 @@ def get_private_ip():
 
     # Get the private IP address
     private_ip = socket.gethostbyname(hostname)
-
+   
     print(f"\nYour private IP Address is: {private_ip}")
 
-
+def get_computer_name():
+    computer_name = socket.gethostname()
+    print(f"Your computers name is: {computer_name}")
 
 
 def get_public_ip():
@@ -32,13 +34,16 @@ def get_public_ip():
         print(f"An error occurred: {e}")
         
 def user_choice():
-    choice = input("\nWould you like the private ip, public ip or both? (priv/pub/all)\n")
+    choice = input("\nWhat would you like? (priv/pub/name/all)\n")
     if choice.lower() == "priv":
         get_private_ip()
     elif choice.lower() == "pub":
         get_public_ip()
+    elif choice.lower() == "name":
+        get_computer_name()
     elif choice.lower() == "all":
         get_private_ip()
+        get_computer_name()
         get_public_ip()
         print("Your IP's have been printed above ^\n")
     else:
