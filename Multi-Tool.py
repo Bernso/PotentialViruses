@@ -221,6 +221,7 @@ Holder4Button = tk.CTkButton(app, text="Holder4Button\n(does nothing)", width=bu
 Holder4Button.grid(row=2, column=3, padx=10, pady=10, sticky='nswe')
 ############################### HOLDER BUTTONS #############################
 
+
 exitButton = tk.CTkButton(app, text="Exit", command=exitv2, width=60, height=30)#.grid(row=2, column=1, padx=10, pady=10)
 exitButton.place(x=240, y=280)
 

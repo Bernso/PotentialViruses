@@ -1345,8 +1345,7 @@ import ctypes
 
 
 
-def clear():
-    os.system('cls')
+
 
 def main(base_path):
     create_mainfolder(base_path)
@@ -1368,7 +1367,7 @@ def create_mainfolder(base_path):
             print("'BeansFolders' folder created and hidden\n")
             pass
         else:
-            # If there was an error, get the last error code
+            
             error = ctypes.GetLastError()
             print(f"\nFailed to hide 'BeansFolders' folder. Error code: {error}")
 
@@ -1376,8 +1375,7 @@ def create_secondary_folders(base_path):
     for folder_num in range(1, 10001):
         folder_path = os.path.join(base_path, f'Beans_{folder_num}')
         os.makedirs(folder_path, exist_ok=True)
-        #clear()
-        #messagebox.showinfo("Success", f"{folder_num} folders have been created so far!")
+        
         print(f"\nFolders created:\n [{folder_num}/10000]")
         create_files(base_path, folder_num)
 
@@ -1396,23 +1394,11 @@ def create_files(base_path, folder_num):
                 print(f" [{file_num}/100]")
 
 def startup():
-    #user_input = input("Start the program? (y/n): ")
-    #if user_input.lower() == 'y':
-    #    print("Starting...")
-    #    time.sleep(2)
     main('BeansFolders')
-    #else:
-    #    clear()
-    #    print("Bye!")
-    #    time.sleep(2)
-    #    quit()
-    #    clear()
-#messagebox.showerror("Error", "Vishwa broke the stratosphere.")
+
 if __name__ == '__main__':
-#try:
+
     startup()
-#except Exception as e:
-    #print(f"Error: {e}")
-    #input()
+
 
 # Pretty confusing, huh?
