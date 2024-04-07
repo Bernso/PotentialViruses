@@ -128,27 +128,6 @@ def download_python_file(file_name, file_number):
     download_py(url, save_path)
     print(f"[{file_number}/9]\n")
 
-def download_py_9():
-    file_name = 'resetScreen'
-    filename = 'Required_Files'
-    response = requests.get('https://raw.githubusercontent.com/Bernso/PotentialViruses/main/mainPYfiles/resetScreen.py')
-    if response.status_code == 200:
-        if os.path.exists(os.path.join(filename, f"{file_name}.py")):
-            print("Python file has already been downloaded")
-            
-        else:
-            try:
-                with open(os.path.join(filename, f"{file_name}.py"), 'wb') as f:
-                    f.write(response.content)
-                print("Python file downloaded successfully!")
-            except Exception as e:
-                print(f"Failed to download Python file.\nError: {e}")
-                input()
-    else:
-        print("Failed to download python file.")
-        print(response.status_code)
-        input()
-    print(f"[9/9]\n")
 
 try: 
     
@@ -169,7 +148,7 @@ try:
     
     download_python_file('minimizeWindows', '8')
     
-    download_py_9()
+    download_python_file('resetScreen', '9')
     
     
     print("All python files downloaded successfully!\n")
