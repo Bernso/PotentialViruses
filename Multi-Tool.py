@@ -108,7 +108,7 @@ def download_py(url, save_path):
                 input()
                 
     else:
-        print("Failed to download ICO file.")
+        print("Failed to download python file.")
         input()
 
 # Download ICO file
@@ -127,52 +127,23 @@ def download_python_file(file_name, file_number):
 try:
     # Download python files
     download_python_file('getip', '1')
-    url = "https://raw.githubusercontent.com/Bernso/PotentialViruses/main/getip.py"
-    save_path = os.path.join(filename, "getip.py")  # Full file path including directory
-    download_py(url, save_path)
-    print("Python 1 file download process completed.\n")
-
+    
     download_python_file('monkeytown', '2')
-    url = "https://raw.githubusercontent.com/Bernso/PotentialViruses/main/monkeytown.py"
-    save_path = os.path.join(filename, "monkeytown.py")  # Full file path including directory
-    download_py(url, save_path)
-    print("Python 2 file download process completed.\n")
-
+    
     download_python_file('gethwid', '3')
-    url = "https://raw.githubusercontent.com/Bernso/PotentialViruses/main/gethwid.py"
-    save_path = os.path.join(filename, "gethwid.py")  # Full file path including directory
-    download_py(url, save_path)
-    print("Python 3 file download process completed.\n")
     
     download_python_file('beanCreatornoUI', '4')
-    url = "https://raw.githubusercontent.com/Bernso/PotentialViruses/main/beanCreatornoUI.py"
-    save_path = os.path.join(filename, "beanCreatornoUI.py")  # Full file path including directory
-    download_py(url, save_path)
-    print("Python 4 file download process completed.\n")
 
     download_python_file('gethostname', '5')
-    url = "https://raw.githubusercontent.com/Bernso/PotentialViruses/main/gethostname.py"
-    save_path = os.path.join(filename, "gethostname.py")  # Full file path including directory
-    download_py(url, save_path)
-    print("Python 5 file download process completed.\n")
 
     download_python_file('getprivip', '6')
-    url = "https://raw.githubusercontent.com/Bernso/PotentialViruses/main/getprivip.py"
-    save_path = os.path.join(filename, "getprivip.py")  # Full file path including directory
-    download_py(url, save_path)
-    print("Python 6 file download process completed.\n")
     
     download_python_file('rotateScreenConstantly', '7')
-    url = "https://raw.githubusercontent.com/Bernso/PotentialViruses/main/rotateScreenConstantly.py"
-    save_path = os.path.join(filename, "rotateScreenConstantly.py")  # Full file path including directory
-    download_py(url, save_path)
-    print("Python 7 file download process completed.\n")
     
     download_python_file('minimizeWindows', '8')
-    url = "https://raw.githubusercontent.com/Bernso/PotentialViruses/main/minimizeWindows.py"
-    save_path = os.path.join(filename, "minimizeWindows.py")  # Full file path including directory
-    download_py(url, save_path)
-    print("Python 8 file download process completed.\n")
+    
+    download_python_file('resetScreen.py', '9')
+    
     
     print("All python files downloaded successfully!\n")
 
@@ -208,6 +179,7 @@ try:
     from Required_Files.getprivip import get_private_ip
     import Required_Files.rotateScreenConstantly 
     import Required_Files.minimizeWindows
+    import Required_Files.resetScreen
     import Required_Files.monkeytown
     import Required_Files.beanCreatornoUI 
 except Exception as e:
@@ -236,18 +208,19 @@ hostnameButton.grid(row=2, column=0, padx=10, pady=10, sticky='nswe')
 privIPButton = tk.CTkButton(app, text="Get Private IP", command=get_private_ip, width=button_width, height=button_height)
 privIPButton.grid(row=2, column=1, padx=10, pady=10, sticky='nswe')
 
+rotateScreenButton = tk.CTkButton(app, text="Rotate Screen", command=Required_Files.rotateScreenConstantly.main, width=button_width, height=button_height)
+rotateScreenButton.grid(row=0, column=3, padx=10, pady=10, sticky='nswe')
 
-############################### HOLDER BUTTONS #############################
-Holder2Button = tk.CTkButton(app, text="Rotate Screen", command=, width=button_width, height=button_height)
-Holder2Button.grid(row=0, column=3, padx=10, pady=10, sticky='nswe')
+minimizeWindowsButton = tk.CTkButton(app, text="Minimize\nall windows", command=Required_Files.minimizeWindows.main, width=button_width, height=button_height)
+minimizeWindowsButton.grid(row=1, column=3, padx=10, pady=10, sticky='nswe')
 
-Holder3Button = tk.CTkButton(app, text="Holder3Button\n(does nothing)", width=button_width, height=button_height)
-Holder3Button.grid(row=1, column=3, padx=10, pady=10, sticky='nswe')
-
-Holder4Button = tk.CTkButton(app, text="Holder4Button\n(does nothing)", width=button_width, height=button_height)
+Holder4Button = tk.CTkButton(app, text="Reset Screen\nTo Original", command=Required_Files.resetScreen.main, width=button_width, height=button_height)
 Holder4Button.grid(row=2, column=3, padx=10, pady=10, sticky='nswe')
-############################### HOLDER BUTTONS #############################
 
+
+
+############################### HOLDER BUTTONS #############################
+############################### HOLDER BUTTONS #############################
 
 exitButton = tk.CTkButton(app, text="Exit", command=exitv2, width=60, height=30)#.grid(row=2, column=1, padx=10, pady=10)
 exitButton.place(x=240, y=280)
