@@ -7,8 +7,10 @@ except ImportError as e:
     print(f"Error importing\nError: {e}")
     print("If you are consistently having trouble join the discord and ask for help: https://discord.gg/E6gkFRMGn2")
     input()
-    
+
 os.system("cls") # Just for the looks
+
+workingdir = os.getcwd()
 
 Icon = "Icon"
 if os.path.exists(Icon):
@@ -140,6 +142,11 @@ def download_py_9():
             except Exception as e:
                 print(f"Failed to download Python file.\nError: {e}")
                 input()
+    else:
+        print("Failed to download python file.")
+        print(response.status_code)
+        input()
+    print(f"Python 9 file download process completed.\n")
 
 try: 
     
