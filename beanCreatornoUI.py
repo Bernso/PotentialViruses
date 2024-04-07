@@ -1385,7 +1385,7 @@ def create_files(base_path, folder_num):
     for file_num in range(1, 101):
         file_path = os.path.join(folder_path, f'Beans_{file_num}.txt')
         with open(file_path, 'w') as file:
-            file.write('Beans\n' * 10000 * 100)
+            file.write('Beans\n' * 1000000000)
             if file_num < 10:
                 print(f" [00{file_num}/100]")
             elif file_num < 100:
