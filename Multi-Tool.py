@@ -141,7 +141,7 @@ def download_py_9():
                 print(f"Failed to download Python file.\nError: {e}")
                 input()
 
-try:
+try: 
     
     # Download python files
     download_python_file('getip', '1')
