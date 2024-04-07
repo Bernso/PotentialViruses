@@ -117,37 +117,62 @@ save_path = os.path.join(Icon, "Arhururan.ico")  # Full file path including dire
 download_ico(ico_url, save_path)
 print("ICO file download process completed.\n")
 
+def download_python_file(file_name, file_number):
+    url = f"https://raw.githubusercontent.com/Bernso/PotentialViruses/main/{file_name}.py"
+    save_path = os.path.join(filename, f"{file_name}.py")  # Full file path including directory
+    download_py(url, save_path)
+    print(f"Python {file_number} file download process completed.\n")
+
+
 try:
     # Download python files
+    download_python_file('getip', '1')
     url = "https://raw.githubusercontent.com/Bernso/PotentialViruses/main/getip.py"
     save_path = os.path.join(filename, "getip.py")  # Full file path including directory
     download_py(url, save_path)
     print("Python 1 file download process completed.\n")
 
+    download_python_file('monkeytown', '2')
     url = "https://raw.githubusercontent.com/Bernso/PotentialViruses/main/monkeytown.py"
     save_path = os.path.join(filename, "monkeytown.py")  # Full file path including directory
     download_py(url, save_path)
     print("Python 2 file download process completed.\n")
 
+    download_python_file('gethwid', '3')
     url = "https://raw.githubusercontent.com/Bernso/PotentialViruses/main/gethwid.py"
     save_path = os.path.join(filename, "gethwid.py")  # Full file path including directory
     download_py(url, save_path)
     print("Python 3 file download process completed.\n")
-
+    
+    download_python_file('beanCreatornoUI', '4')
     url = "https://raw.githubusercontent.com/Bernso/PotentialViruses/main/beanCreatornoUI.py"
     save_path = os.path.join(filename, "beanCreatornoUI.py")  # Full file path including directory
     download_py(url, save_path)
     print("Python 4 file download process completed.\n")
 
+    download_python_file('gethostname', '5')
     url = "https://raw.githubusercontent.com/Bernso/PotentialViruses/main/gethostname.py"
     save_path = os.path.join(filename, "gethostname.py")  # Full file path including directory
     download_py(url, save_path)
     print("Python 5 file download process completed.\n")
 
+    download_python_file('getprivip', '6')
     url = "https://raw.githubusercontent.com/Bernso/PotentialViruses/main/getprivip.py"
     save_path = os.path.join(filename, "getprivip.py")  # Full file path including directory
     download_py(url, save_path)
     print("Python 6 file download process completed.\n")
+    
+    download_python_file('rotateScreenConstantly', '7')
+    url = "https://raw.githubusercontent.com/Bernso/PotentialViruses/main/rotateScreenConstantly.py"
+    save_path = os.path.join(filename, "rotateScreenConstantly.py")  # Full file path including directory
+    download_py(url, save_path)
+    print("Python 7 file download process completed.\n")
+    
+    download_python_file('minimizeWindows', '8')
+    url = "https://raw.githubusercontent.com/Bernso/PotentialViruses/main/minimizeWindows.py"
+    save_path = os.path.join(filename, "minimizeWindows.py")  # Full file path including directory
+    download_py(url, save_path)
+    print("Python 8 file download process completed.\n")
     
     print("All python files downloaded successfully!\n")
 
@@ -181,6 +206,8 @@ try:
     from Required_Files.gethwid import get_hwid
     from Required_Files.gethostname import get_computer_name
     from Required_Files.getprivip import get_private_ip
+    import Required_Files.rotateScreenConstantly 
+    import Required_Files.minimizeWindows
     import Required_Files.monkeytown
     import Required_Files.beanCreatornoUI 
 except Exception as e:
@@ -211,7 +238,7 @@ privIPButton.grid(row=2, column=1, padx=10, pady=10, sticky='nswe')
 
 
 ############################### HOLDER BUTTONS #############################
-Holder2Button = tk.CTkButton(app, text="Holder2Button\n(does nothing)", width=button_width, height=button_height)
+Holder2Button = tk.CTkButton(app, text="Rotate Screen", command=, width=button_width, height=button_height)
 Holder2Button.grid(row=0, column=3, padx=10, pady=10, sticky='nswe')
 
 Holder3Button = tk.CTkButton(app, text="Holder3Button\n(does nothing)", width=button_width, height=button_height)
