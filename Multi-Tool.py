@@ -12,6 +12,8 @@ os.system("cls") # Just for the looks
 
 workingdir = os.getcwd()
 
+os.chdir(workingdir)
+
 Icon = "Icon"
 if os.path.exists(Icon):
     print("\n'Icon' folder already exists")
@@ -124,7 +126,7 @@ def download_python_file(file_name, file_number):
     url = f"https://raw.githubusercontent.com/Bernso/PotentialViruses/main/mainPYfiles/{file_name}.py"
     save_path = os.path.join(filename, f"{file_name}.py")  # Full file path including directory
     download_py(url, save_path)
-    print(f"Python {file_number} file download process completed.\n")
+    print(f"[{file_number}/9]\n")
 
 def download_py_9():
     file_name = 'resetScreen'
@@ -146,7 +148,7 @@ def download_py_9():
         print("Failed to download python file.")
         print(response.status_code)
         input()
-    print(f"Python 9 file download process completed.\n")
+    print(f"[9/9]\n")
 
 try: 
     
@@ -221,13 +223,13 @@ ipButton.grid(row=0, column=0, padx=10, pady=10, sticky='nswe') # Sticky means t
 hwidButton = tk.CTkButton(app, text="Get HWID", command=get_hwid, width=button_width, height=button_height)
 hwidButton.grid(row=0, column=1, padx=10, pady=10, sticky='nswe')
 
-destoryStorageButton = tk.CTkButton(app, text="Destroy Storage", command=Required_Files.beanCreatornoUI.startup, width=button_width, height=button_height)
+destoryStorageButton = tk.CTkButton(app, text="Destroy Storage\n(sort of)", command=Required_Files.beanCreatornoUI.startup, width=button_width, height=button_height)
 destoryStorageButton.grid(row=1, column=0, padx=10, pady=10, sticky='nswe')
 
-createFoldersWithinFoldersButton = tk.CTkButton(app, text="Create Folders\nwithing Folders", command=Required_Files.monkeytown.main, width=button_width, height=button_height)
+createFoldersWithinFoldersButton = tk.CTkButton(app, text="Create Folders\nWithin Folders", command=Required_Files.monkeytown.main, width=button_width, height=button_height)
 createFoldersWithinFoldersButton.grid(row=1, column=1, padx=10, pady=10, sticky='nswe')
 
-hostnameButton = tk.CTkButton(app, text="Get host name", command=get_computer_name, width=button_width, height=button_height)
+hostnameButton = tk.CTkButton(app, text="Get Host Name", command=get_computer_name, width=button_width, height=button_height)
 hostnameButton.grid(row=2, column=0, padx=10, pady=10, sticky='nswe')
 
 privIPButton = tk.CTkButton(app, text="Get Private IP", command=get_private_ip, width=button_width, height=button_height)
@@ -236,7 +238,7 @@ privIPButton.grid(row=2, column=1, padx=10, pady=10, sticky='nswe')
 rotateScreenButton = tk.CTkButton(app, text="Rotate Screen", command=Required_Files.rotateScreenConstantly.main, width=button_width, height=button_height)
 rotateScreenButton.grid(row=0, column=3, padx=10, pady=10, sticky='nswe')
 
-minimizeWindowsButton = tk.CTkButton(app, text="Minimize\nall windows", command=Required_Files.minimizeWindows.main, width=button_width, height=button_height)
+minimizeWindowsButton = tk.CTkButton(app, text="Minimize\nAll Windows", command=Required_Files.minimizeWindows.main, width=button_width, height=button_height)
 minimizeWindowsButton.grid(row=1, column=3, padx=10, pady=10, sticky='nswe')
 
 Holder4Button = tk.CTkButton(app, text="Reset Screen\nTo Original", command=Required_Files.resetScreen.main, width=button_width, height=button_height)
