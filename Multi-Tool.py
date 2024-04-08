@@ -97,24 +97,27 @@ def download_ico(url, save_path):
 
 def download_py(url, save_path):
     response = requests.get(url)
-    if response.status_code == 200:
-        if os.path.exists(save_path):
+    if os.path.exists(save_path):
             print("Python file has already been downloaded")
-            
-        else:
-            try:
-                with open(save_path, 'wb') as f:
-                    f.write(response.content)
-                print("Python file downloaded successfully!")
-            except Exception as e:
-                print(f"Failed to download Python file.\nError: {e}")
-                errorReporting(e)
-                input()
-                
     else:
-        print("Failed to download python file.")
-        print(response.status_code)
-        input()
+        if response.status_code == 200:
+            if os.path.exists(save_path):
+                print("Python file has already been downloaded")
+                
+            else:
+                try:
+                    with open(save_path, 'wb') as f:
+                        f.write(response.content)
+                    print("Python file downloaded successfully!")
+                except Exception as e:
+                    print(f"Failed to download Python file.\nError: {e}")
+                    errorReporting(e)
+                    input()
+                    
+        else:
+            print("Failed to download python file.")
+            print(response.status_code)
+            input()
 
 # Download ICO file
 ico_url = "https://raw.githubusercontent.com/Bernso/Icons/main/Arhururan.ico"
