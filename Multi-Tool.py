@@ -133,7 +133,7 @@ def download_python_file(file_name, file_number):
 
 
 try: 
-    
+    start_time = time.time()
     # Download python files
     download_python_file('getip', '1')
     
@@ -155,6 +155,10 @@ try:
     
     
     print("All python files downloaded successfully!\n")
+    
+    end_time = time.time()
+    
+    print(f"Download process completed in {round(end_time - start_time, 2)} seconds.")
 
 except Exception as e:
     print(f"Failed to download python files.\nError: {e}")
