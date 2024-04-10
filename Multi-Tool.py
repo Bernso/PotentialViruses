@@ -227,8 +227,8 @@ rotateScreenButton.grid(row=0, column=3, padx=10, pady=10, sticky='nswe')
 minimizeWindowsButton = tk.CTkButton(app, text="Minimize\nAll Windows", command=Required_Files.minimizeWindows.main, width=button_width, height=button_height)
 minimizeWindowsButton.grid(row=1, column=3, padx=10, pady=10, sticky='nswe')
 
-Holder4Button = tk.CTkButton(app, text="Reset Screen\nTo Original", command=Required_Files.resetScreen.main, width=button_width, height=button_height)
-Holder4Button.grid(row=2, column=3, padx=10, pady=10, sticky='nswe')
+resetScreenButton = tk.CTkButton(app, text="Reset Screen\nTo Original", command=Required_Files.resetScreen.main, width=button_width, height=button_height)
+resetScreenButton.grid(row=2, column=3, padx=10, pady=10, sticky='nswe')
 
 
 
