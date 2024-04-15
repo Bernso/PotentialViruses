@@ -5,7 +5,7 @@ try:
     import time
 except ImportError as e:
     print(f"Error importing\nError: {e}")
-    print("If you are consistently having trouble join the discord and ask for help: https://discord.gg/E6gkFRMGn2")
+    print("If you are consistently having trouble join the discord and ask for help: https://discord.gg/k5HBFXqtCB")
     input()
 
 os.system("cls") # Just for the looks
@@ -31,8 +31,8 @@ else:
     print("'Required_Files' folder created\n")
 
 
-FEEDBACK_DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1221533046746906705/UmI-FXnuaaGNppGfmYdA7fDeHMN2KUekp43K2vR1dGa6TJ7MDBVAJPpFmyd3QMMHLW9b"
-ERROR_DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1221543200746111136/EJij3VCrHVxqwq-bSGwgSnWc8_oXNNP3tcFXcRHDzI62LHSZP5NviUDNv2txY63w-UnL"
+FEEDBACK_DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1229440007345803305/OAG0f4UArsUjDTLJHrRp0fwwGW9W9kXODfyPh03drCzR5gqO9bsiMU2YJiXGNoZNhVVf"
+ERROR_DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1229440106822369360/38OxmUGx0_6dmLh3aSyHVdY_1snDPeYkR1xm_dGt27LuIQkp923OqQMG25StcSRi5NAT"
 # This will default to be sent to my webhooks, if anyone uses it for anything that is not this it will be deleted
 
 def sendFeedback(message):
@@ -49,7 +49,7 @@ def sendFeedback(message):
         print(f"Error: {e}")
 
 def feedback():
-    user_feedback = input("\nIf you would like any extra support, join the discord: https://discord.gg/E6gkFRMGn2 \nAny feedback? (if you do please type it here)\n")
+    user_feedback = input("\nIf you would like any extra support, join the discord: https://discord.gg/k5HBFXqtCB \nAny feedback? (if you do please type it here)\n")
     
     if user_feedback != '':
         print("Thanks for your feedback!")
@@ -73,7 +73,7 @@ def errorReporting(error):
         print(f"Error sent to dev.")
         print()
     except Exception as e:
-        print("Message failed to send, please report this. https://discord.gg/E6gkFRMGn2 (this link will never expire)")
+        print("Message failed to send, please report this. https://discord.gg/k5HBFXqtCB (this link will never expire)")
         print(f"Error: {e}")
         input()
 
