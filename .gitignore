@@ -5,3 +5,4 @@ BeansFolders
 __pycache__
 test.py
 build
+specFiles
