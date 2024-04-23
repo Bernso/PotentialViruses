@@ -4,3 +4,4 @@ Required_Files
 BeansFolders
 __pycache__
 test.py
+build
