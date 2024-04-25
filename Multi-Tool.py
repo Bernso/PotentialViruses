@@ -101,10 +101,6 @@ def download_py(url, save_path):
             print("Python file has already been downloaded")
     else:
         if response.status_code == 200:
-            if os.path.exists(save_path):
-                print("Python file has already been downloaded")
-                
-            else:
                 try:
                     with open(save_path, 'wb') as f:
                         f.write(response.content)
