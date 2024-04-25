@@ -192,7 +192,7 @@ try:
     import  Required_Files.resetScreen
     import  Required_Files.monkeytown
     import  Required_Files.beanCreatornoUI 
-    import  Required_Files.wallpaperChanger.py      
+    import  Required_Files.wallpaperChanger      
 except Exception as e:
     print(f"Failed to import python files.\nError: {e}")
     errorReporting(e)    
