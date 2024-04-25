@@ -125,7 +125,7 @@ def download_python_file(file_name, file_number):
     url = f"https://raw.githubusercontent.com/Bernso/PotentialViruses/main/mainPYfiles/{file_name}.py"
     save_path = os.path.join(filename, f"{file_name}.py")  # Full file path including directory
     download_py(url, save_path)
-    print(f"[{file_number}/9]\n")
+    print(f"[{file_number}/10]\n")
 
 
 try: 
