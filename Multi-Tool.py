@@ -149,6 +149,7 @@ try:
     
     download_python_file('resetScreen', '9')
     
+    download_python_file('wallpaperChanger', '10')
     
     print("All python files downloaded successfully!\n")
     
@@ -169,7 +170,7 @@ def exitv2():
 
 
 app = tk.CTk()
-app.geometry("550x320")
+app.geometry("728x320")
 app.title("Virus Central (By Bernso)")
 app.iconbitmap("Icon/Arhururan.ico")
 
@@ -191,6 +192,7 @@ try:
     import  Required_Files.resetScreen
     import  Required_Files.monkeytown
     import  Required_Files.beanCreatornoUI 
+    import  Required_Files.wallpaperChanger.py      
 except Exception as e:
     print(f"Failed to import python files.\nError: {e}")
     errorReporting(e)    
@@ -226,13 +228,20 @@ minimizeWindowsButton.grid(row=1, column=3, padx=10, pady=10, sticky='nswe')
 resetScreenButton = tk.CTkButton(app, text="Reset Screen\nTo Original", command=Required_Files.resetScreen.main, width=button_width, height=button_height)
 resetScreenButton.grid(row=2, column=3, padx=10, pady=10, sticky='nswe')
 
+changeWallPaper = tk.CTkButton(app, text="Change wallpaper", width=button_width, height=button_height, command=Required_Files.wallpaperChanger.main)
+changeWallPaper.grid(row=0, column=4, padx=10, pady=10, sticky='nswe')
 
 
 ############################### HOLDER BUTTONS #############################
+holder2 = tk.CTkButton(app, text="Holder Button2", width=button_width, height=button_height)
+holder2.grid(row=1, column=4, padx=10, pady=10, sticky='nswe')
+
+holder3 = tk.CTkButton(app, text="Holder Button3", width=button_width, height=button_height)
+holder3.grid(row=2, column=4, padx=10, pady=10, sticky='nswe')
 ############################### HOLDER BUTTONS #############################
 
 exitButton = tk.CTkButton(app, text="Exit", command=exitv2, width=60, height=30)#.grid(row=2, column=1, padx=10, pady=10)
-exitButton.place(x=240, y=280)
+exitButton.place(x=333, y=280)
 
 
 
